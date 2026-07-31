@@ -1,4 +1,4 @@
-# sssshivvvv.github.io
+# shivhere.github.io
 
 Personal website of **Shivam Singh** — Research Fellow at AMD India.
 
@@ -16,7 +16,7 @@ Personal website of **Shivam Singh** — Research Fellow at AMD India.
 ## Local preview
 
 ```bash
-cd sssshivvvv.github.io
+cd shivhere.github.io
 python3 -m http.server 8080
 # open http://localhost:8080
 ```
