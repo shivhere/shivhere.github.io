@@ -460,6 +460,7 @@ h3 { font-size: 1.25rem; }
 .interest-hero.monkey { background: linear-gradient(135deg, #2a9d8f, #a7c957); }
 .interest-hero.moto { background: linear-gradient(135deg, #e76f51, #f4a261); }
 .interest-hero.blog { background: linear-gradient(135deg, #6a4c93, #c77dff); }
+.interest-hero.blog_makalidurga { background: linear-gradient(135deg, #344e41, #588157); }
 
 .interest-hero h1 { color: white; margin-bottom: 0.5rem; }
 .interest-hero p { opacity: 0.92; max-width: 600px; margin: 0 auto; font-size: 1.05rem; }
@@ -499,6 +500,12 @@ h3 { font-size: 1.25rem; }
 .gallery-item:hover { transform: scale(1.02); }
 
 .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-item video {
   width: 100%;
   height: 100%;
   object-fit: cover;
