@@ -52,6 +52,9 @@
         <h2 class="research-title">Segmenting Egocentric Work Videos into Described Sub-Tasks Without Labels</h2>
         <p class="research-authors"><strong>Shivam Singh</strong> (intuition.dev)</p>
         <p class="research-abstract">Built a geometry-first pipeline that turns long body-camera recordings of manual work into sub-task clips, each with a grounded natural-language description, without training a segmentation model and without labels. Four cheap detectors remove dead footage (a parked camera, a blank wall, a black screen) and the remainder is stitched. The camera's metric trajectory, recovered with Depth Anything 3, is scanned with a <em>station-change</em> template: the wearer was still, turned, walked a distance scaled to the space, and stayed, with the cut placed at the walk onset. Each clip is described by a 27B Vision-Language Model (Qwen3.8 via vLLM) under strict grounding rules that separate what is visible from what is inferred, and a text-only pass over the ordered descriptions yields the video's global context. On a corpus of 20 videos (3.4 h) the pipeline removed 1,621 s of dead footage, proposed 37 station changes and produced 54 grounded clip descriptions with no failed requests, in under an hour on one GPU. Every boundary is explainable by three numbers; ablations of the pose models, the detectors, the cut anchor and a video-adaptive stillness window fixed the final configuration.</p>
+        <div class="research-links">
+          <a href="assets/data/intuition_work.pdf" class="link-pill" target="_blank" rel="noopener">Technical Report (PDF)</a>
+        </div>
       </div>
     </article>
 
