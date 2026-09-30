@@ -1,6 +1,31 @@
-/* Navigation toggle + lightbox gallery */
+/* Navigation toggle + dark mode toggle + lightbox gallery */
 (function () {
   "use strict";
+
+  // Dark mode toggle (initial theme is set in <head> by theme-init.js)
+  const root = document.documentElement;
+  const themeToggle = document.querySelector(".theme-toggle");
+
+  function setTheme(theme, save) {
+    root.setAttribute("data-theme", theme);
+    themeToggle?.setAttribute("aria-pressed", String(theme === "dark"));
+    if (save) {
+      try { localStorage.setItem("theme", theme); } catch (e) { /* storage blocked */ }
+    }
+  }
+
+  setTheme(root.getAttribute("data-theme") === "dark" ? "dark" : "light", false);
+
+  themeToggle?.addEventListener("click", () => {
+    setTheme(root.getAttribute("data-theme") === "dark" ? "light" : "dark", true);
+  });
+
+  // Follow system changes until the visitor picks a theme themselves
+  window.matchMedia?.("(prefers-color-scheme: dark)").addEventListener?.("change", (e) => {
+    let saved = null;
+    try { saved = localStorage.getItem("theme"); } catch (err) { /* storage blocked */ }
+    if (!saved) setTheme(e.matches ? "dark" : "light", false);
+  });
 
   // Mobile nav toggle
   const toggle = document.querySelector(".nav-toggle");
