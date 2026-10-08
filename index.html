@@ -8,11 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
   <script src="assets/js/theme-init.js"></script>
   <script src="assets/js/analytics.js"></script>
 </head>
-<body>
+<body class="has-cover">
 
 <nav class="site-nav">
   <div class="nav-inner">
@@ -37,13 +37,25 @@
   </div>
 </nav>
 
+<header class="cover">
+  <img src="assets/img/me/cover-makalidurga.jpg" alt="Shivam standing on a grassy hilltop at Makalidurga, above a misty valley" loading="eager">
+  <div class="cover-scrim"></div>
+  <div class="cover-text">
+    <div class="container">
+      <p class="cover-kicker">AI Researcher</p>
+      <h1 class="cover-name">Shivam Singh</h1>
+      <p class="cover-sub">Embodied &amp; Physical AI &middot; Video Understanding &middot; Spatial Reasoning</p>
+    </div>
+  </div>
+</header>
+
 <section class="hero">
   <div class="container hero-grid">
-    <img src="assets/img/me/01-pxl-20240519-013119929.jpg" alt="Shivam Singh" class="hero-photo" loading="eager">
+    <figure class="hero-portrait">
+      <img src="assets/img/me/01-pxl-20240519-013119929.jpg" alt="Shivam Singh" class="hero-photo" loading="eager">
+      <figcaption class="hero-quote">&ldquo;Humans are meant to be artists.&rdquo;</figcaption>
+    </figure>
     <div>
-      <p class="hero-tagline">AI Researcher</p>
-      <h1>Shivam Singh</h1>
-      <p class="hero-sub">Embodied &amp; Physical AI &middot; Video Understanding &middot; Spatial Reasoning</p>
       <p class="hero-bio">
         Hi, I am Shivam Singh, an AI researcher with 3+ years of research experience across IIIT Hyderabad and AMD. I completed my Masters at Robotics Research Centre, IIIT Hyderabad, where I worked on embodied AI, classical planning, task anticipation, and human-robot collaboration. I later joined AMD's AI Models & Agents team, where my work shifted toward Vision-Language Models, video understanding, multimodal reasoning, and memory.
 
@@ -71,6 +83,10 @@
   <div class="container">
     <div class="section-header"><h2>News</h2></div>
     <ul class="news-list">
+      <li class="news-item">
+        <span class="news-date">Sep 2026</span>
+        <span class="news-text">Cooking is my latest hobby 🍳👨‍🍳🍛</span>
+      </li>
       <li class="news-item">
         <span class="news-date">Jul 2026</span>
         <span class="news-text">Graduated with an <strong>MS degree from IIIT Hyderabad</strong>; you can access my thesis <a href="https://drive.google.com/file/d/1TKPF6Usnz-siDKdLVJIscwOFVM5uweR3/view?usp=sharing" target="_blank" rel="noopener">here</a>.</span>
@@ -124,6 +140,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=2"></script>
+<script src="assets/js/main.js?v=3"></script>
 </body>
 </html>

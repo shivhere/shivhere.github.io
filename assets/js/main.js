@@ -1,4 +1,4 @@
-/* Navigation toggle + dark mode toggle + lightbox gallery */
+/* Navigation toggle + dark mode toggle + home cover scroll + lightbox gallery */
 (function () {
   "use strict";
 
@@ -37,6 +37,16 @@
       navLinks?.classList.toggle("open");
       navSocial?.classList.toggle("open");
     });
+  }
+
+  // Home cover photo: expose scroll progress over the first screen as --cover-p (see .cover in style.css)
+  if (document.querySelector(".cover")) {
+    const updateCover = () => {
+      root.style.setProperty("--cover-p", Math.min(1, window.scrollY / window.innerHeight).toFixed(3));
+    };
+    window.addEventListener("scroll", updateCover, { passive: true });
+    window.addEventListener("resize", updateCover);
+    updateCover();
   }
 
   // Lightbox
