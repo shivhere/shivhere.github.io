@@ -1,0 +1,351 @@
+\documentclass[]{resume-openfont}
+\geometry{hmargin=0.75cm, vmargin=0.5cm}   % slightly tighter than the class default (1cm / 0.94cm) to keep two pages
+\renewcommand{\sectionsep}{\vspace{3pt}}    % class default 7pt
+% class section style with a tighter line height (class: 16pt/24pt) to keep two pages
+\titleformat{\section}{\color{headings}\scshape\customLatoLight\fontsize{16pt}{20pt}\selectfont\raggedright\uppercase}{}{0em}{}
+\usepackage[bibstyle=publist,plauthorhandling=highlight,nameorder=given-family,minbibnames=10,maxbibnames=50]{biblatex}
+\DeclareDelimFormat[bib]{nametitledelim}{\newline\bibsentence}
+\usepackage{academicons}
+\usepackage{xcolor}
+
+\plauthorname[Shivam]{Singh}
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+\usepackage{tikz}
+
+\newcommand{\ExternalLink}{%
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{% 
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{%
+\runsubsection{#1}
+\descript{| #2 \; (#4)}
+\hfill
+CGPA: #3
+\fakeNewLine
+}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Shivam Singh}
+
+\newcommand{\yourEmail}{shivamsingh3458@gmail.com}
+\newcommand{\githubUserName}{sssshivvvv}
+\newcommand{\linkedInUserName}{sssshivvvv}
+\newcommand{\yourWebsiteLink}{https://shivhere.github.io}
+\newcommand{\scholarID}{Wcn55lQAAAAJ}
+\newcommand{\phone}{+91 8130870896}
+
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small
+    \href{mailto:\yourEmail}{\faEnvelope \ \underline{\yourEmail}} $|$ 
+    \href{https://www.linkedin.com/in/\linkedInUserName}{\faLinkedin \ \underline{LinkedIn}} $|$ 
+    \href{https://github.com/\githubUserName}{\faGithub \ \underline{GitHub}} $|$ 
+    \href{\yourWebsiteLink}{\faGlobe \ \underline{shivhere.github.io}} $|$ 
+    \href{https://scholar.google.com/citations?user=\scholarID}{\aiGoogleScholar \ \underline{Google Scholar}} $|$
+    Phone:\phone
+\end{center}
+
+\vspace{-4pt}
+{\centering
+    \textbf{AI Researcher} with \textbf{3+ years of experience} in Vision-Language Models, multimodal reasoning, video understanding, and embodied AI.\par}
+\vspace{3pt}
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+\section{Education}
+
+\educationHeading
+{M.S. -- Electronics and Communication Engineering}
+{IIIT Hyderabad}
+{8.33/10}
+{2023--2026}
+
+% \educationHeading
+% {M.S. -- Control and Optimization}
+% {IIT Madras}
+% {8.50/10}
+% {2022}
+
+\educationHeading
+{B.Tech -- Electronics and Communication Engineering}
+{RKGIT, Ghaziabad}
+{8.07/10}
+{2017--2021}
+\sectionsep
+
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+
+
+\section{Research \& Professional Experience}
+
+\resumeHeading
+{pixelstwo}
+{Collaboration}
+{Remote}
+{Sep 2026 - Present}
+
+\textit{\textbf{Focus: Video Data Quality \& Real-to-Sim / Sim-to-Real Systems}}
+\sectionsep
+
+\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt]
+\item Performing \textbf{quality control of video data}, ensuring recordings are reliable and consistent for downstream training and evaluation.
+\item Working on \textbf{real-to-sim and sim-to-real systems}.
+\end{itemize}
+\sectionsep
+
+
+\resumeHeading
+{intuition.dev}
+{Collaboration}
+{Remote}
+{Aug 2026 - Sep 2026}
+
+\textit{\textbf{Focus: Real-World Video Pipelines}}
+\sectionsep
+
+\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt]
+\item \textbf{\href{https://shivhere.github.io/assets/data/intuition_work.pdf}{Label-free Segmentation and Grounded Description of Egocentric Work Videos: }}\hfill \textit{\textbf{2026}}
+\begin{itemize}
+\item Built a \textbf{geometry-first, label-free pipeline} that converts raw body-camera recordings of manual work into \textbf{clean, standalone sub-task clips}: removed inactive/noisy footage with classical detectors and detected \textbf{task-transition points} from metric camera trajectories using purely classical image-processing heuristics, without relying on large models for segmentation and prior annotations.
+\item Structured raw videos for downstream \textbf{VLM-based annotation} by isolating relevant task segments before captioning, \textbf{reducing VLM inference cost} and enabling more consistent, task-level annotations under a fixed JSON schema with grounded actions.    [\href{https://shivhere.github.io/assets/data/intuition_work.pdf}{ Technical Report \ExternalLink}]
+\end{itemize}
+\end{itemize}
+\sectionsep
+
+
+\resumeHeading
+{AMD India Private Limited}
+{Research Fellow}
+{AI Models \& Agents Team}
+{Jun 2025 - July 2026}
+
+\textit{\textbf{Focus: VLMs, Video Reasoning \& Spatial Understanding}}
+\sectionsep
+
+\textbf{Supervisors:} Saptarshi Majumder, Pratik Prabhanjan Brahma
+\sectionsep
+
+\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt]
+\item \textbf{Spatial Video Understanding from Raw RGB Videos:}\hfill \textit{\textbf{2026}}
+\begin{itemize}
+    \item Proposed \textit{SlotMem}, a \textbf{memory-augmented} transformer framework for object tracking, spatial understanding, and long-horizon video reasoning from raw monocular RGB videos.
+    
+    \item Developed a \textbf{scalable pipeline} combining Depth-Anything-3, YOLO-World, and Vision-Language Models to reconstruct 3D scenes, estimate camera trajectories, and generate supervision for spatial, temporal, and goal-oriented reasoning.
+    
+    \item Trained SlotMem using our automatically generated supervision together with diverse videos from VLM-3R and VICA-322K, achieving \textbf{state-of-the-art} performance on OST-Bench (\textbf{44.4\%}) and outperforming all prior baselines.
+\end{itemize}
+\vspace{0.05cm}
+
+\item \textbf{Pause and Think: Video-Grounded Assistive Action Suggestion:}\hfill \textit{\textbf{2025}}
+
+\begin{itemize}
+    \item Proposed a reasoning-centric framework for video-grounded assistive action suggestion by introducing \textit{Pause-and-Think-T} (\textbf{$\sim$10k} structured reasoning QA pairs) with explicit reasoning supervision and \textit{Pause-and-Think-B}, a \textbf{300-sample} benchmark for grounded contextual understanding and goal-oriented planning across Epic-Kitchens, Assembly101, and Ego4D.
+
+    \item Built a scalable reasoning-data pipeline and fine-tuned a compact \textbf{4B} VLM on 8$\times$AMD Instinct MI325 GPUs, achieving \textbf{58.0\%} accuracy---matching Qwen3-VL-235B (\textbf{58.9\%}, \textbf{59$\times$ larger}) and GPT-5.2 on scene understanding, outperforming GPT-4o, with strong zero-shot generalization on EgoThink and TempCompass.
+
+    \item Deployed the optimized model on an \textbf{AMD Ryzen\textsuperscript{TM} AI} platform for real-time on-device inference; as \textbf{First Author}, led the research, algorithm design, dataset creation, model training, evaluation, deployment, and manuscript preparation. [\href{https://github.com/sssshivvvv/pause-and-think}{Code \ExternalLink} | \href{https://arxiv.org/abs/2606.00616}{Paper \ExternalLink}]
+\end{itemize}
+
+\end{itemize}
+\sectionsep
+
+
+\resumeHeading
+{International Institute of Information Technology - Hyderabad}
+{M.S. Researcher}
+{\href{https://robotics.iiit.ac.in/}{Robotics Research Centre, Hyderabad}}
+{Jan 2023 - May 2025}
+
+\textit{\textbf{Focus: Embodied AI \& Robot Planning}}
+\sectionsep
+
+\textbf{Direct Supervisor:} \href{https://robotics.iiit.ac.in/faculty_mkrishna/}{Prof. Madhava Krishna}\\
+\textbf{Collaborators:} \href{https://homepages.inf.ed.ac.uk/msridhar/}{Dr. Mohan Sridharan}, \href{https://krrish94.github.io/}{Dr. Krishna Murthy Jatavallabhula}, \href{https://sites.google.com/view/brojeshwar/home}{Dr. Brojeshwar Bhowmick}
+\sectionsep
+
+\begin{itemize}[itemsep=0pt, parsep=0pt, topsep=1pt]
+\item \textbf{Hybrid Planning with LLMs \& Probabilistic Models} (\textit{ECMR 2025}) \hfill \textit{\textbf{2025}}\\
+\textbf{Mentor:} Guided framework design and ablation experiments for task planning under uncertainty with probabilistic effects in multi-agent settings. [\href{https://arxiv.org/abs/2602.19518}{Paper \ExternalLink}]
+\vspace{0.03cm}
+
+\item \textbf{LLM \& Knowledge Graphs for Task Decomposition} (\textit{IEEE ICRA 2025}) \hfill \textit{\textbf{2025}}\\
+\textbf{Project Lead:} Designed a framework that integrates Large Language Models (LLMs), Knowledge Graphs (KGs), and Human-in-the-Loop (HITL) feedback to enable embodied agents to perform long-horizon planning for unseen tasks and \textbf{progressively adapt} to new environments. [\href{https://sssshivvvv.github.io/adaptbot/}{Website \ExternalLink} | \href{https://arxiv.org/pdf/2502.02067}{Paper \ExternalLink}]
+\vspace{0.03cm}
+
+\item \textbf{Task Anticipation for Multi-Agent Systems} (\textit{ICRA \& RSS 2024 Workshops}) \hfill \textit{\textbf{2024}}\\
+\textbf{Project Lead:} Extended LLM-based task anticipation to long-horizon planning in \textbf{multi-agent settings}, enabling robotic agents to anticipate domain-specific tasks, adapt to unexpected changes in human behavior, and handle environmental uncertainties for effective human--robot collaboration. [\href{https://dataplan-hrc.github.io/}{Website \ExternalLink} | \href{https://arxiv.org/pdf/2404.03587}{Paper \ExternalLink}]
+\vspace{0.03cm}
+
+\item \textbf{Task Anticipation using LLMs} (\textit{IEEE ICRA 2024}) \hfill \textit{\textbf{2023}}\\
+\textbf{Co-author \& Project Lead:} Developed an intelligent household agent that performs\textbf{ long-horizon planning }by anticipating user actions through learning task execution patterns from user behavior and preferences, leveraging Large Language Models (LLMs) and Planning Domain Definition Language (PDDL)-based task and action representations.[\href{https://raraghavarora.github.io/ahsoka/}{Website \ExternalLink} | \href{https://arxiv.org/pdf/2502.02066}{Paper \ExternalLink}]
+\end{itemize}
+\sectionsep
+
+\resumeHeading{AlsoEnergy – India}{Technical Support Engineer}{April 2021}{Dec 2021}
+\vspace{-0.3em}
+\begin{itemize}
+\item PowerTrack platform support for commercial solar clients: troubleshooting, data visualization, hardware integration.
+\end{itemize}
+\sectionsep
+
+
+
+
+
+\section{Publications \& Workshops}
+\begin{itemize}[itemsep=0pt, topsep=1pt]
+    \item \href{https://arxiv.org/abs/2606.00616}{\textbf{Pause and Think: A Dataset and Benchmark for Video-Grounded Assistive Action Suggestion: \ExternalLink}} \textbf{Shivam Singh}, S Majumder, P Prabhanjan, Z Liu, E Barsoum. \\
+    \textit{Accepted at \href{https://2026.ieee-iros.org/}{IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS) 2026\ExternalLink ~\textbf{(A*)}}. Work done at AMD (Advanced Micro Devices, Inc.).}
+    \item \href{https://arxiv.org/abs/2602.19518}{\textbf{Anticipate, Adapt, Act: A Hybrid Framework for Task Planning: \ExternalLink}} N Dash, A Kaura, \textbf{Shivam Singh}, R Singh, S Banerjee, M Sridharan, M Krishna. \\
+    \textit{Accepted at IEEE European Conference on Mobile Robots (ECMR) 2025.}
+    \item 
+    \href{https://sssshivvvv.github.io/adaptbot/}{\textbf{\textcolor{black}{AdaptBot: Combining LLM with Knowledge Graphs and Human Input for Generic-to-Specific Task Decomposition and Knowledge Refinement: \ExternalLink}}} \textbf{Shivam Singh}, K Swaminathan, N Dash, R Singh, S Banerjee, M Sridharan, M Krishna.\\ \textit{Accepted at \href{https://2025.ieee-icra.org/}{IEEE International Conference on Robotics and Automation (ICRA) 2025\ExternalLink~\textbf{(A*)} }, Atlanta, US. 
+    {\textbf{\color{black}{\href{https://2025.ieee-icra.org/}{\textcolor{black}}}}}}
+    % {\faLink}}}}}
+    \item {\textbf{\color{black}{\href{https://openreview.net/forum?id=XmInDYtUPa}{\textcolor{black}{Anticipate \& Collab: Data-driven Task Anticipation and Knowledge-driven Planning for Human-robot Collaboration \ExternalLink }}}}}: \textbf{Shivam Singh$^\ast$}, K Swaminathan$^\ast$, R Arora$^\ast$, D Das, S Banerjee, M Sridharan, M Krishna. \textit{Accepted in \href{https://sites.google.com/view/rss-taskspec}{RSS2024 Workshop on Task Specification for General-Purpose Intelligent Robots \ExternalLink}, Delft, Netherlands}
+    \item \href{https://events.infovaya.com/uploads/documents/pdfviewer/37/ff/133990-3210.pdf}{\textbf{Anticipate \& Act: Integrating LLMs and Classical Planning for Efficient Task Execution in Household Environments: \ExternalLink}} R Arora*, \textbf{Shivam Singh*},  K Swaminathan, A Datta, S Banerjee, B Bhowmick, KM Jatavallabhula, M Sridharan, M Krishna. \\
+    \textit{Accepted at \href{https://2024.ieee-icra.org/}{IEEE International Conference on Robotics and Automation (ICRA) 2024 \ExternalLink ~\textbf{(A*)}}, Yokohama, Japan.}
+    \item \href{https://drive.google.com/file/d/1sHZiiRoblnyshA-U7Gh8xrvXestDAaEH/view}{\textbf{DaTAPlan: Data-driven Task Anticipation and Knowledge-driven Planning for Human-robot Collaboration: \ExternalLink }} \textbf{Shivam Singh*},  K Swaminathan*, R Arora*, R Singh, A Datta, D Das, S Banerjee, M Sridharan, and M Krishna. \\
+    \textit{Accepted in ICRA 2024 Workshop on \href{https://sites.google.com/view/icra2024cookingrobotics/}{Cooking Robotics: Perception and motion planning \ExternalLink}, Yokohama, Japan.}
+\end{itemize}
+\setlength{\linewidth}{18cm}
+
+\section{Patents}
+\begin{itemize}[itemsep=0pt, topsep=1pt]
+    \item \href{https://patents.google.com/patent/US20260216870A1/en}{\textbf{Method for Automatic Knowledge Refinement and Task Execution \ExternalLink}}: S Banerjee, \textbf{Shivam Singh}, K Swaminathan, N Dash, R Singh, M Sridharan, and M Krishna. \textit{US Patent App. 19420895}, published July 30, 2026.
+    \item \href{https://patents.google.com/patent/US20250342322A1/en}{\textbf{Method and System for Task Anticipation by Integrating Large Language Models and Classical Planning \ExternalLink}}: S Banerjee, B Bhowmick, R Arora, A Datta, \textbf{Shivam Singh}, K Swaminathan, M Krishna, M Sridharan, and KM Jatavallabhula. \textit{US Patent App. 19089689}, published November 6, 2025.
+\end{itemize}
+
+
+
+\section{Technical Skills}
+
+\textbf{Research Areas:}
+LLMs, VLMs, VLAs, Reasoning Models, Computer Vision, Multimodal Learning, Agentic AI, Embodied AI
+
+\textbf{Training \& Inference:}
+PyTorch, Hugging Face, LLaMA-Factory, SFT, RLHF, LoRA, DeepSpeed, vLLM, ROCm
+
+\textbf{Data \& Infrastructure:}
+Multimodal Data Curation, Synthetic Data, Benchmarking, Docker, Slurm, OpenCV, Open3D
+
+\textbf{Programming \& Robotics:}
+Python, C++, C, PDDL, RDDL, ROS, Gazebo, AI2-THOR
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
