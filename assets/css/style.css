@@ -481,6 +481,7 @@ h3 { font-size: 1.25rem; }
 .badge-arxiv { background: #f0e6ff; color: #7d3c98; }
 .badge-workshop { background: #e8f5e9; color: #2e7d32; }
 .badge-ongoing { background: #fff3e0; color: #e65100; }
+.badge-patent { background: #fdf3d8; color: #8a6514; }
 
 [data-theme="dark"] .badge-icra { background: rgba(240, 132, 102, 0.16); color: #f5a48c; }
 [data-theme="dark"] .badge-iros { background: rgba(42, 157, 143, 0.2); color: #6fd3c6; }
@@ -488,6 +489,7 @@ h3 { font-size: 1.25rem; }
 [data-theme="dark"] .badge-arxiv { background: rgba(170, 110, 210, 0.2); color: #cfa6ec; }
 [data-theme="dark"] .badge-workshop { background: rgba(102, 187, 106, 0.18); color: #9ad49d; }
 [data-theme="dark"] .badge-ongoing { background: rgba(255, 152, 0, 0.18); color: #ffb866; }
+[data-theme="dark"] .badge-patent { background: rgba(212, 168, 83, 0.18); color: #e6c47e; }
 
 .research-authors {
   font-size: 0.88rem;
